@@ -7,6 +7,7 @@ var disabled = function(element) {
 }
 
 var select = function (e, element) {
+  if (e.target.classList.contains('caption')) return;
   if (element.classList.contains('item-default')) {
     element.classList.remove('default-hover');
     element.classList.remove('item-default');
@@ -16,6 +17,7 @@ var select = function (e, element) {
     return;
   }
   if (element.classList.contains('selected')) {
+    if (e.target.classList.contains('caption')) return;
     element.classList.remove('selected-hover');
     element.classList.remove('selected');
     element.classList.add('item-default');
